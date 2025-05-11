@@ -23,7 +23,7 @@ const WebLocationSection = () => {
           fontWeight={700}
           textAlign="center"
           gutterBottom
-          sx={{ color: config.colors.textPrimary }}
+          sx={{ color: config.colors.secondary }}
         >
           {locationSectionConfig.heading}
         </Typography>
@@ -56,12 +56,12 @@ const WebLocationSection = () => {
                   </Typography>
                 </Box>
 
-                <Box display="flex" alignItems="center" gap={1}>
+                {/* <Box display="flex" alignItems="center" gap={1}>
                   <PhoneIcon color="success" />
                   <Typography variant="body1">
                     {config.contact.phone}
                   </Typography>
-                </Box>
+                </Box> */}
 
                 {/* 🕑 Tabla de horarios */}
                 <Box mt={3}>

@@ -70,7 +70,7 @@ const WebContactSection = () => {
           fontWeight={700}
           textAlign="center"
           gutterBottom
-          sx={{ color: config.colors.textPrimary }}
+          sx={{ color: config.colors.secondary }}
         >
           {contactSectionConfig.heading}
         </Typography>
