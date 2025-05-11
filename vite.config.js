@@ -14,6 +14,6 @@ export default defineConfig({
       },
     },
   },
-  // base: '/portfolio/',
+  base: '/fmec-website/',
   plugins: [react()],
 })
