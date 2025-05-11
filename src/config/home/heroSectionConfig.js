@@ -5,7 +5,7 @@ const heroSectionConfig = {
       subtitle: "Especialistas en reparación, mantención y servicios automotrices.",
       buttonText: "Ver Servicios",
       buttonLink: "/services",
-      backgroundImage: "src/assets/home/heroSection/carousel_image_1.png",
+      backgroundImage: "assets/home/heroSection/carousel_image_1.png",
     },
     {
       title: "Confía tu vehículo a profesionales",

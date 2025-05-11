@@ -60,7 +60,7 @@ const config = {
   },
 
   // Ruta al logo de la empresa
-  logo: "src/assets/common/FMEC_logo.png",
+  logo: "assets/common/FMEC_logo.png",
 };
 
 export default config;
