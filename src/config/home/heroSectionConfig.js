@@ -23,7 +23,7 @@ const heroSectionConfig = {
 
   // ✅ Agregamos parámetros configurables
   swiperSettings: {
-    autoplayDelay: 10000,
+    autoplayDelay: 5000,
     navigationColor: "#FFFFFF",
     navigationHoverColor: "#D1D1D1",
     bulletColor: "rgba(255,255,255,0.4)",

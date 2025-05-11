@@ -10,17 +10,33 @@ const config = {
 
   // Datos de contacto básicos
   contact: {
-    phone: "+56 9 1234 5678",
-    email: "contacto@tallermecanico.cl",
-    address: "Av. Principal 1234, Santiago, Chile",
-    workingHours: "Lunes a Sábado - 9:00 a 18:00",
+    phone: "+56 9 8560 4468",
+    email: "contactofmec@gmail.cl",
+    address: "Av. Andres Sabella 2616, Antofagasta, Chile",
+    workingHours: "Lunes a Viernes - 9:00 a 18:00 y Sabado - 9:00 a 13:00",
+    extra: "Atendemos de lunes a viernes de 9:00 a 18:00 y sábado de 9:00 a 13:00",
   },
 
   // Redes sociales
   socialLinks: [
-    { name: "Facebook", url: "https://facebook.com/tallermecanico" },
-    { name: "Instagram", url: "https://instagram.com/tallermecanico" },
-    { name: "WhatsApp", url: "https://wa.me/56912345678" },
+    {
+      name: "Facebook",
+      url: "https://www.facebook.com/FMEC2616",
+      iconName: "FacebookIcon",
+      active: true,
+    },
+    {
+      name: "Instagram",
+      url: "https://www.instagram.com/fmecmantenciones/",
+      iconName: "InstagramIcon",
+      active: true,
+    },
+    {
+      name: "WhatsApp",
+      url: "https://wa.me/56912345678",
+      iconName: "WhatsAppIcon",
+      active: false,
+    },
   ],
 
   // Secciones de navegación principales

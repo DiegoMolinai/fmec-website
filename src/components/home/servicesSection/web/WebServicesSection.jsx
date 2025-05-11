@@ -1,9 +1,9 @@
 import { Grid, Card, CardContent, Typography, Box } from "@mui/material";
-import servicesOverviewConfig from "../../config/home/servicesOverviewConfig";
-import iconMap from "../../config/iconMap";
-import config from "../../config/config";
+import servicesSectionConfig from "../../../../config/home/servicesSectionConfig";
+import iconMap from "../../../../config/iconMap";
+import config from "../../../../config/config";
 
-const ServicesOverview = () => {
+const WebServicesSection = () => {
   return (
     <section id="services" style={{ marginTop: "2rem" }}>
       <Box
@@ -19,13 +19,13 @@ const ServicesOverview = () => {
           fontWeight={700}
           textAlign="center"
           gutterBottom
-          sx={{ color: config.colors.textPrimary }}
+          sx={{ color: config.colors.secondary }}
         >
           Nuestros Servicios
         </Typography>
 
         <Grid container spacing={4} mt={3}>
-          {servicesOverviewConfig.map((service, index) => {
+          {servicesSectionConfig.map((service, index) => {
             const IconComponent = iconMap[service.iconName];
 
             return (
@@ -93,4 +93,4 @@ const ServicesOverview = () => {
   );
 };
 
-export default ServicesOverview;
+export default WebServicesSection;

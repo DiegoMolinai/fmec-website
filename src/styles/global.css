@@ -1,39 +1,78 @@
 /* src/styles/global.css */
 
+/* Variables base */
+:root {
+  --font-primary: 'Inter', sans-serif;
+
+  --color-bg: #0b0e11;
+  --color-bg-light: #1b1f24;
+
+  --color-primary: #5bbf62;
+  --color-accent: #5bbf62;
+
+  --color-text: #f0f0f0;
+  --color-text-secondary: #cccccc;
+}
+
+/* Viewport y fondo global */
 html, body, #root {
-    width: 100%;
-    height: 100%;
-    min-height: 100%;
-    overflow-x: hidden;
-    background-color: transparent;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  overflow-x: hidden;
+  background-color: transparent; /* ✅ deja ver el fondo animado */
+}
+
+/* Tipografía y scroll */
+body {
+  font-family: var(--font-primary);
+  color: var(--color-text);
+  line-height: 1.6;
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-attachment: fixed; /* 🔥 para animación y Safari */
+}
+
+/* Layout mínimo */
+main {
+  min-height: 100vh;
+}
+
+/* Elementos generales */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+button, input, textarea {
+  font-family: inherit;
+  color: var(--color-text);
+  background-color: transparent;
+  border: none;
+}
+
+/* Autofill fix */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--color-bg) inset !important;
+  -webkit-text-fill-color: var(--color-text) !important;
+}
+
+/* Fondo animado */
+@keyframes moveBackground {
+  0% {
+    background-position: 0% 50%, 100% 50%;
   }
-  
-  body {
-    font-family: 'Inter', sans-serif; /* O tu fuente si quieres */
-    line-height: 1.6;
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    background-attachment: fixed; /* 🔥 ESTO ES SUPER IMPORTANTE */
+  50% {
+    background-position: 50% 0%, 50% 100%;
   }
-  
-  main {
-    min-height: 100vh;
+  100% {
+    background-position: 0% 50%, 100% 50%;
   }
-  
-  a {
-    text-decoration: none;
-    color: inherit;
-  }
-  
-  img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
-  
-  button, input, textarea {
-    font-family: inherit;
-    background-color: transparent;
-  }
-  
+}

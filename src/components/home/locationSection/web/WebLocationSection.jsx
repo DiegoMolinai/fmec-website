@@ -4,10 +4,10 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import DirectionsIcon from "@mui/icons-material/Directions";
 import PhoneIcon from "@mui/icons-material/Phone";
 
-import config from "../../config/config";
-import locationMapConfig from "../../config/home/locationMapConfig";
+import config from "../../../../config/config";
+import locationSectionConfig from "../../../../config/home/locationSectionConfig";
 
-const LocationMap = () => {
+const WebLocationSection = () => {
   return (
     <section id="location" style={{ marginTop: "2rem" }}>
       <Box
@@ -25,7 +25,7 @@ const LocationMap = () => {
           gutterBottom
           sx={{ color: config.colors.textPrimary }}
         >
-          {locationMapConfig.heading}
+          {locationSectionConfig.heading}
         </Typography>
 
         <Paper
@@ -50,14 +50,14 @@ const LocationMap = () => {
             <Grid item size={{ xs: 12, md: 5 }}>
               <Stack spacing={2}>
                 <Box display="flex" alignItems="center" gap={1}>
-                  <LocationOnIcon color="action" />
+                  <LocationOnIcon color="error" />
                   <Typography variant="body1">
                     {config.contact.address}
                   </Typography>
                 </Box>
 
                 <Box display="flex" alignItems="center" gap={1}>
-                  <PhoneIcon color="action" />
+                  <PhoneIcon color="success" />
                   <Typography variant="body1">
                     {config.contact.phone}
                   </Typography>
@@ -89,60 +89,65 @@ const LocationMap = () => {
                       // mt: 0.5,
                     }}
                   >
-                    {locationMapConfig.openingHours.map(({ day, hours }, i) => (
-                      <Box
-                        key={i}
-                        sx={{
-                          display: "flex",
-                          justifyContent: "space-between",
-                          px: 2,
-                          py: 1,
-                          backgroundColor:
-                            i % 2 === 0
-                              ? config.colors.background
-                              : config.colors.secondary,
-                        }}
-                      >
-                        <Typography variant="body2">{day}</Typography>
-                        <Typography
-                          variant="body2"
+                    {locationSectionConfig.openingHours.map(
+                      ({ day, hours }, i) => (
+                        <Box
+                          key={i}
                           sx={{
-                            fontStyle:
-                              hours.toLowerCase() === "cerrado"
-                                ? "italic"
-                                : "normal",
-                            color:
-                              hours.toLowerCase() === "cerrado"
-                                ? "#888"
-                                : "inherit",
+                            display: "flex",
+                            justifyContent: "space-between",
+                            px: 2,
+                            py: 1,
+                            backgroundColor:
+                              i % 2 === 0
+                                ? config.colors.background
+                                : config.colors.secondary,
                           }}
                         >
-                          {hours}
-                        </Typography>
-                      </Box>
-                    ))}
+                          <Typography variant="body2">{day}</Typography>
+                          <Typography
+                            variant="body2"
+                            sx={{
+                              fontStyle:
+                                hours.toLowerCase() === "cerrado"
+                                  ? "italic"
+                                  : "normal",
+                              color:
+                                hours.toLowerCase() === "cerrado"
+                                  ? "#888"
+                                  : "inherit",
+                            }}
+                          >
+                            {hours}
+                          </Typography>
+                        </Box>
+                      )
+                    )}
                   </Box>
                 </Box>
 
                 {/* 🧭 Instrucciones */}
                 <Box mt={2}>
                   <Box display="flex" alignItems="center" gap={1} mb={1}>
-                    <DirectionsIcon color="action" />
+                    <DirectionsIcon color="info" />
                     <Typography variant="subtitle1" fontWeight={700}>
                       Cómo llegar
                     </Typography>
                   </Box>
                   <Typography variant="body2">
-                    {locationMapConfig.instructions}
+                    {locationSectionConfig.instructions}
                   </Typography>
                 </Box>
 
                 <Button
-                  href={locationMapConfig.externalLink}
+                  href={locationSectionConfig.externalLink}
                   target="_blank"
                   rel="noopener noreferrer"
                   variant="contained"
                   sx={{
+                    textTransform: "none",
+                    fontWeight: 600,
+                    fontSize: "1rem",
                     mt: 3,
                     backgroundColor: config.colors.primary,
                     color: config.colors.secondary,
@@ -160,7 +165,7 @@ const LocationMap = () => {
             <Grid item size={{ xs: 12, md: 7 }}>
               <Box
                 component="iframe"
-                src={locationMapConfig.iframeSrc}
+                src={locationSectionConfig.iframeSrc}
                 width="100%"
                 height="100%"
                 allowFullScreen=""
@@ -180,4 +185,4 @@ const LocationMap = () => {
   );
 };
 
-export default LocationMap;
+export default WebLocationSection;

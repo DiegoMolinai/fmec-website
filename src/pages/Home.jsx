@@ -1,10 +1,10 @@
 import { Container, Box } from "@mui/material";
-import HeroSection from "../components/home/HeroSection";
-import ServicesOverview from "../components/home/ServicesOverview";
-import AboutUsSection from "../components/home/AboutUsSection";
-import ContactSection from "../components/home/ContactSection";
-import LocationMap from "../components/home/LocationMap";
+import HeroSection from "../components/home/heroSection/HeroSection";
+import AboutUsSection from "../components/home/aboutSection/AboutUsSection";
+import ContactSection from "../components/home/contactSection/ContactSection";
 import FadeInSection from "../components/animation/FadeInSection";
+import ServicesSection from "../components/home/servicesSection/ServicesSection";
+import LocationSection from "../components/home/locationSection/LocationSection";
 
 const Home = () => {
   return (
@@ -14,13 +14,13 @@ const Home = () => {
           <HeroSection />
         </FadeInSection>
         <FadeInSection delay={0.1} type="fadeUp">
-          <ServicesOverview />
+          <ServicesSection />
         </FadeInSection>
         <FadeInSection delay={0.2} type="slideLeft">
           <AboutUsSection />
         </FadeInSection>
         <FadeInSection delay={0.3} type="slideRight">
-          <LocationMap />
+          <LocationSection />
         </FadeInSection>
         <FadeInSection delay={0.4} type="fadeScale">
           <ContactSection />
