@@ -65,7 +65,7 @@ const WebHeroSection = () => {
           autoplay={{ delay: heroSectionConfig.swiperSettings.autoplayDelay }}
           navigation
           pagination={{ clickable: true }}
-          style={{ width: "100%",  }}
+          style={{ width: "100%" }}
         >
           {heroSectionConfig.slides.map((slide, index) => {
             const hasBackground = Boolean(slide.backgroundImage);
@@ -75,7 +75,7 @@ const WebHeroSection = () => {
                   sx={{
                     borderRadius: 4,
                     border:2,
-                    minHeight: "90vh",
+                    minHeight: "90dvh",
                     // width: "100%",
                     backgroundImage: hasBackground
                       ? `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${slide.backgroundImage})`
