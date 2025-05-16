@@ -6,39 +6,70 @@ import iconMap from "../../../../config/iconMap";
 const WebAboutUsSection = () => {
   return (
     <section id="about" style={{ marginTop: "2rem" }}>
-      <Box sx={{ minHeight: "100vh", display: "flex", flexDirection: "column", justifyContent: "center" }}>
-        <Typography variant="h4" fontWeight={700} textAlign="center" gutterBottom sx={{ color: config.colors.secondary }}>
+      <Box
+        sx={{
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "center",
+          py: 6,
+        }}
+      >
+        <Typography
+          variant="h4"
+          fontWeight={700}
+          textAlign="center"
+          gutterBottom
+          sx={{ color: config.colors.secondary, mb: 2 }}
+        >
           {aboutUsSectionConfig.heading}
         </Typography>
 
-        <Typography variant="body1" textAlign="center" maxWidth="md" mx="auto" mb={6} sx={{ color: config.colors.secondary }}>
+        <Typography
+          variant="body1"
+          textAlign="center"
+          maxWidth="md"
+          mx="auto"
+          mb={6}
+          sx={{ color: config.colors.secondary }}
+        >
           {aboutUsSectionConfig.description}
         </Typography>
 
+        {/* Valores */}
         <Grid container spacing={4}>
           {aboutUsSectionConfig.values.map((item, index) => {
             const Icon = iconMap[item.iconName];
             return (
-              <Grid item size={{ xs: 12, sm: 6, md: 3 }} key={index}>
-                <Paper elevation={3} sx={paperCardStyle}>
-                  {Icon && <Icon sx={{ fontSize: 40, mb: 2, color: config.colors.primary }} />}
-                  <Typography variant="h6" fontWeight={700} gutterBottom>{item.title}</Typography>
-                  <Typography variant="body2" color="textSecondary">{item.text}</Typography>
+              <Grid item size={{ xs: 12, md: 4, sm:6}} key={index}>
+                <Paper sx={cardStyle}>
+                  {Icon && <Icon className="card-icon" sx={{ fontSize: 50, mb: 2 }} />}
+                  <Typography variant="h6" className="card-title" gutterBottom>
+                    {item.title}
+                  </Typography>
+                  <Typography variant="body2" className="card-text" mb={2}>
+                    {item.text}
+                  </Typography>
                 </Paper>
               </Grid>
             );
           })}
         </Grid>
 
-        <Grid container spacing={4} mt={6}>
+        {/* Misión y Visión */}
+        <Grid container spacing={4} mt={4}>
           {[aboutUsSectionConfig.mission, aboutUsSectionConfig.vision].map((section, idx) => {
             const Icon = iconMap[section.iconName];
             return (
               <Grid item size={{ xs: 12, md: 6 }} key={idx}>
-                <Paper elevation={2} sx={paperCardStyle}>
-                  {Icon && <Icon sx={{ fontSize: 50, mb: 2, color: config.colors.primary }} />}
-                  <Typography variant="h6" fontWeight={700} gutterBottom>{section.title}</Typography>
-                  <Typography variant="body1" sx={{ color: config.colors.textSecondary }}>{section.text}</Typography>
+                <Paper sx={cardStyle}>
+                  {Icon && <Icon className="card-icon" sx={{ fontSize: 60, mb: 2 }} />}
+                  <Typography variant="h6" className="card-title" gutterBottom>
+                    {section.title}
+                  </Typography>
+                  <Typography variant="body1" className="card-text">
+                    {section.text}
+                  </Typography>
                 </Paper>
               </Grid>
             );
@@ -49,22 +80,39 @@ const WebAboutUsSection = () => {
   );
 };
 
-const paperCardStyle = {
+const cardStyle = {
   p: 4,
-  borderRadius: 3,
-  backgroundColor: config.colors.secondary,
-  border: `1px solid ${config.colors.accent}`,
-  height: "100%",
-  display: "flex",
-  flexDirection: "column",
-  alignItems: "center",
-  justifyContent: "center",
+  borderRadius: 4,
+  backgroundColor: config.colors.primaryLight,         // blanco por defecto
+  border: `2px solid ${config.colors.accent}`,       // borde gris claro
+  boxShadow: "0 4px 12px rgba(0, 0, 0, 0.15)",        // sombra negra por defecto
   textAlign: "center",
-  transition: "all 0.4s ease",
-  boxShadow: "0 2px 8px rgba(0, 0, 0, 0.08)",
+  transition: "background-color 0.3s ease, box-shadow 0.3s ease",
+  "& .card-icon": {
+    color: config.colors.secondary,                     // ícono gris claro
+    transition: "color 0.3s ease",
+  },
+  "& .card-title": {
+    color: config.colors.secondary,                // título negro
+    transition: "color 0.3s ease",
+  },
+  "& .card-text": {
+    color: config.colors.secondary,              // texto secundario
+    transition: "color 0.3s ease",
+  },
   "&:hover": {
-    transform: "translateY(-6px)",
-    boxShadow: "0 10px 24px rgba(0, 0, 0, 0.2)",
+    backgroundColor: config.colors.secondary,       // gris claro en hover
+    borderColor: "#FFF",              // borde gris oscuro en hover
+    boxShadow: "0 12px 24px rgba(255, 255, 255, 0.5)",// sombra blanca en hover
+    "& .card-icon": {
+      color: config.colors.primary,                  // ícono gris oscuro al hover
+    },
+    "& .card-title": {
+      color: config.colors.primary,                  // título gris oscuro al hover
+    },
+    "& .card-text": {
+      color: config.colors.primary,              // texto negro al hover
+    },
   },
 };
 

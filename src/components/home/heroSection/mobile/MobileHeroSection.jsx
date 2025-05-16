@@ -49,7 +49,7 @@ const MobileHeroSection = () => {
                   sx={{
                     borderRadius: 4,
                     border:2,
-                    minHeight: "90vh",
+                    minHeight: "90dvh",
                     backgroundImage: hasBackground
                       ? `linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(${slide.backgroundImage})`
                       : undefined,
